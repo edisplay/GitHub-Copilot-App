@@ -4,4 +4,4 @@
 
 ### Added
 
-- Public Preview for the GitHub app
+- Technical Preview for the GitHub app

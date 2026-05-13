@@ -4,11 +4,11 @@ The GitHub Copilot app is a desktop application for agent-driven development tha
 
 > **Availability:** The GitHub Copilot app is in public preview. Copilot Business and Enterprise subscribers have access today. Copilot Pro and Pro+ subscribers can [sign up for early access](https://gh.io/github-app).
 
-![GitHub app](docs/readme-github-app.png)
+![GitHub Copilot app](docs/readme-github-app.png)
 
 ## Introduction and overview
 
-The GitHub app is a desktop application purpose-built for agent-driven development. It gives you a single place to direct AI agents across parallel workstreams, work with GitHub issues and pull requests, and manage the full development lifecycle—without context-switching between terminals, IDEs, and browser tabs.
+The GitHub Copilot app is a desktop application purpose-built for agent-driven development. It gives you a single place to direct AI agents across parallel workstreams, work with GitHub issues and pull requests, and manage the full development lifecycle—without context-switching between terminals, IDEs, and browser tabs.
 
 The app is built on GitHub Copilot CLI and integrates natively with GitHub, so your repositories, branches, and CI pipelines work out of the box. It's designed for workflows where you want to run multiple agents in parallel and stay focused on directing work rather than doing it all yourself.
 

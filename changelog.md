@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.2.9
+
+### Added
+
+- Branch-mode scheduled workflows now bind to a dedicated branch workspace pinned at first run, with a workflow icon in the sidebar for workflow-owned workspaces. Project-less workflows run as general chat sessions, and the sidebar filter menu gains a "Hide workflow sessions" toggle.
+- New /chronicle slash commands let you view session history, generate standup summaries, search past activity, and get workflow improvement tips directly from the chat input.
+- Session automations (scheduled wake-ups and recurring prompts) are now supported in workspace sessions, in addition to general chat sessions.
+
+### Changed
+
+- Multiple workspace package scripts can now run at the same time. The Scripts menu shows running scripts first with per-script stop and log controls, and a Stop all option separates active scripts from idle ones.
+
+### Fixed
+
+- Clicking the find button in the markdown file toolbar now opens the find overlay and focuses the search input, matching the behavior of the Command-F keyboard shortcut.
+- Fixed a bug where expanding a full file in the diff view after a prior partial expansion could leave some rows displaying stale line numbers and text from other lines.
+- Fixed an issue where browser previews could become unresponsive after being hidden or minimized in the background.
+- Fixed an issue where the agent could get stuck in a loop replying to the same inline review comment multiple times instead of moving on.
+- Spellcheck is now disabled in comment fields and search inputs, removing false-positive red underlines on code, file paths, and identifiers.
+- Syntax highlighting now works correctly for .mjs, .cjs, .mts, and .cts files in the file view.
+- Terminal processes (dev servers, scripts) are now properly stopped when a workspace is deleted or archived, preventing orphaned background processes from continuing to run.
+- The model selected in the draft composer is now consistently used when starting a new session, including from the command palette and other workspace creation paths.
+- When automatic feedback submission fails, the feedback form now offers a prefilled GitHub issue URL as a fallback instead of timing out silently.
+
 ## v0.2.8
 
 ### Added

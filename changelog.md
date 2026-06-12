@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.2.32
+
+### Added
+
+- Export markdown content as a secret GitHub Gist from the workspace plan canvas, markdown file editor, and assistant reply actions.
+- Free Copilot plan users now see an upgrade prompt in Account settings highlighting higher usage limits, premium models, and AI reviews.
+- Use the /agent slash command in the prompt composer to select a custom agent for your session. The active agent is shown in the branch popover and persists across app restarts.
+
+### Changed
+
+- Creating a new session is now significantly faster — model data is preloaded in the background while the workspace is being set up, reducing cold-start time by ~900ms.
+- Inline-code file paths in the markdown file viewer are now rendered as clickable pills that open the file directly, matching the behavior already present in chat messages and tool-call results. Newly created files also become clickable immediately without requiring a reload.
+- The label filter picker in the work filter bar now renders GitHub emoji shortcodes (e.g. :bug:) as emoji glyphs instead of raw text.
+- When a project's startup script fails, the error notification now shows a tail of the captured script output inline, along with a "View logs" action to see the full output and an "Edit script" action to jump directly to the project's script settings.
+
+### Fixed
+
+- Browser preview and extension canvas panels now correctly reflect the app zoom level instead of staying at a stale zoom when the zoom setting is changed.
+- Centered dialogs no longer overflow off-screen or hide their footer and close button when the viewport is short or the user has zoomed in.
+- Fixed a bug where toggling a state filter value off in the My work filter bar would have no effect when the view was saved with a legacy state qualifier (e.g. built-in views like Active), leaving the selection permanently stuck.
+- On Linux, selecting a .desktop application from the "Open in..." custom app picker now correctly launches the app and displays its icon.
+- Pressing ArrowDown from the newest prompt history entry now restores the saved draft and closes the history popover, instead of leaving the composer stuck at the most recent history item.
+- Sleep prevention (keep awake) now works on Linux via systemd-logind D-Bus inhibit; the settings toggle is also visible on Linux.
+
 ## v0.2.31
 
 ### Added

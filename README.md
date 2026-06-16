@@ -72,7 +72,7 @@ For open-ended questions, please visit the [Discussions](https://github.com/gith
 
 © GitHub, Inc. All rights reserved.
 
-# Data and telemetry
+## Data & Telemetry
 
 If you use the GitHub Copilot App with your GitHub Copilot account, we may collect usage data (such as code acceptance or rejections), associated conversation data, and user feedback submitted via the feedback dialog. See our [GitHub Copilot Trust Center](https://copilot.github.trust.page) for more information.
 

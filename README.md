@@ -70,7 +70,7 @@ For open-ended questions, please visit the [Discussions](https://github.com/gith
 
 ## License
 
-© GitHub, Inc. All rights reserved. See [License.md](./License.md).
+© GitHub, Inc. All rights reserved.
 
 # Data and telemetry
 

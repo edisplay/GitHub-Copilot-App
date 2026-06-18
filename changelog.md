@@ -1,5 +1,57 @@
 # Changelog
 
+## v1.0.1
+
+### Highlights
+
+- Added configurable branch prefix settings — set an app-wide default and a per-project override for the prefix used when generating worktree branches.
+- External links can now open the app and pre-fill the plugin install form via deep links, letting plugin marketplace READMEs link directly into Settings → Plugins.
+- Sketch is now available as a recommended MCP server in Settings, letting you connect Copilot to your Sketch designs.
+- GitHub issue and pull request links now open in-app by default, showing them in right-panel tabs or the My Work detail view instead of the system browser.
+- The "Default model" option has been removed from General Settings — your model, reasoning effort, and context tier selections in the composer are now automatically used for new sessions.
+
+### Added
+
+- Added configurable branch prefix settings — set an app-wide default and a per-project override for the prefix used when generating worktree branches.
+- External links can now open the app and pre-fill the plugin install or add-marketplace form via deep links, letting plugin marketplace READMEs link directly into Settings → Plugins.
+- Sketch is now available as a recommended MCP server in Settings, letting you connect Copilot to your Sketch designs.
+
+### Changed
+
+- GitHub issue and pull request links now open in-app by default across markdown and timeline cross-reference surfaces. In workspace sessions they open in right-panel issue/PR tabs, and in My Work they navigate to the corresponding detail view. Right-click on these links shows a consistent Open link and Copy link menu, where Open link and Cmd/Ctrl-click still open the system browser.
+- In the composer Tasks panel, group headers ("To-dos" / "Background agents") are now hidden when only one group is present, reducing visual clutter.
+- MCP settings now groups servers into categories — 'On this device', 'Plugins', and 'Built-in' — making it easier to see which servers come from plugins versus your own configuration.
+- The "My work" filter bar now shows only your active filters instead of listing all available filters as placeholder pills. Adding a filter and then clearing its value keeps the picker open so you can choose a new value, and closing the picker with no value removes the pill. Filters showing "Any" now appear visually muted.
+- The feature tip on new-session and quick-chat empty states is now stable for the duration of a session. The auto-rotating behavior and the "Show another tip" button have been removed.
+- The sidebar's 'Filter sessions' dropdown (Sort by, Projects) has been replaced with a single toggle button to switch between grouped and flat session views.
+- Updated slash command descriptions to use "session" instead of "workspace".
+- When the agent asks you a question, your answer now shows your GitHub avatar and a curved connector linking the question to your response.
+
+### Fixed
+
+- Fixed an intermittent error ('Cannot rebase onto multiple branches') that occurred when running git rebase or git pull --rebase in a workspace while the app was open and polling for sync status in the background.
+- Fixed the focus ring not appearing on the Keyboard Shortcuts settings heading when navigating to it via deep link on macOS.
+- Keyboard focus ring now appears correctly when navigating the server-type selector in Settings → MCP Servers → Add server using arrow keys on macOS.
+- Label color dots in the pull request and issue metadata toolbar now match the colors shown in the labels dropdown.
+- macOS: pressing `Home` or `End` on an external keyboard no longer inserts an invalid `.notdef` box character (U+F729 / U+F72B) into the chat composer, home-screen prompt, or other text inputs.
+- On Windows, the app no longer becomes unresponsive to NVDA and Windows Voice Access after the window loses focus or is covered by another window.
+- On Windows, the Open dialog now shows the correct icon for PowerShell (Core / 7+) and correctly labels the legacy entry as "Windows PowerShell".
+- Opening a dialog (such as Settings) now closes any open menu instead of leaving it visible on screen.
+- Opening a non-text binary file (e.g. a font or other binary file) in the workspace file viewer now shows the "This file can't be previewed" placeholder instead of a "Failed to load workspace file." error banner.
+- Restored the separate "Show another tip" button on the empty-state rotating tips, so the tip text is read as content instead of being hidden inside the button's accessible name.
+- Right-clicking an item in My Work and choosing "New session" from the context menu now opens the session composer (where you can choose a model and write a prompt) instead of immediately starting an automatic review.
+- Screen readers now announce the number of matching shortcuts (e.g. "3 shortcuts found" or "No shortcuts found") when filtering the keyboard shortcuts list in Settings → Accessibility.
+- Text in extension canvases (editor preview, browser, terminal, and others) now renders with the same font smoothing as the rest of the app.
+- The in-app terminal now correctly reports its terminal type as xterm-256color regardless of how the app was launched, fixing broken colors and missing capabilities in shells and TUI programs when the app was started from tmux, screen, or the macOS dock.
+- Users on unlimited plans now see an infinity icon and a 'No usage limit' label in the prompt composer usage gauge instead of a blank space.
+- Videos attached to a pull request or issue now play in the detail panel instead of showing a blank area.
+- When editing an existing cloud automation, the "Run in the cloud" switch now correctly shows as enabled and disabled (read-only) instead of being hidden, and clicking the label text no longer accidentally toggles the switch.
+- When opening the Keyboard Shortcuts settings section via the command palette, the section heading is now focused and scrolled into view.
+
+### Removed
+
+- The "Default model" option has been removed from General Settings. Your model, reasoning effort, and context tier selections in the composer are now automatically used when creating new sessions.
+
 ## v1.0.0
 
 ### Highlights

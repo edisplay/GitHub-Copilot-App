@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.5
+
+### Added
+
+- Model Providers configuration — connect your own API keys from OpenAI, Anthropic, Azure, and others — is now available to all users in Settings.
+
+### Fixed
+
+- Fixed a sidebar status flicker where merging a pull request briefly bounced between "Ready to merge" and "Done" before settling.
+
 ## v1.0.4
 
 ### Highlights

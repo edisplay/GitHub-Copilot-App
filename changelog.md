@@ -1,5 +1,41 @@
 # Changelog
 
+## v1.0.9
+
+### Highlights
+
+- Quick chats now support tool-approval commands (/yolo, /allow-all-tools, /reset-allowed-tools) and session forking, bringing them to feature parity with code sessions.
+- The Settings → Usage & Plan page now shows your active Copilot plan name directly beneath the Plan heading, so you no longer need to visit GitHub.com to see which plan you are on.
+- Sessions awaiting your input now display a question-mark icon in the sidebar instead of a small dot, making the needs-input state easier to recognize at a glance.
+- Fixed orphaned git fsmonitor daemon processes accumulating after each app quit — daemons are now stopped on worktree removal and when the app exits.
+- Fixed the Windows tray icon disappearing against the taskbar when using a dark system theme — the icon now uses a theme-appropriate asset and updates automatically.
+
+### Added
+
+- Quick chats now support tool-approval commands (/yolo, /allow-all-tools, /reset-allowed-tools) and session forking, bringing them to feature parity with code sessions.
+- Searching or filtering in Settings (Themes, MCP servers, Skills, Experimental, and Plugins) now announces the number of matching results to screen readers.
+- The Settings → Usage & Plan page now shows your active Copilot plan name (e.g. Copilot Max, Copilot Pro+, Copilot Business) directly beneath the Plan heading, so you no longer need to visit GitHub.com to see which plan you are on.
+
+### Changed
+
+- Folder rows in the Files and Changes trees now show only a chevron (no redundant folder icon), and changed-file status icons align with the folder gutter — matching VS Code's file-tree style.
+- Improved the empty states in the automations view when search or filters return no results: the runs list now shows a title, description, and a "Clear filters" button consistent with the gallery section.
+- Removed the inline Split down and Split right buttons from the tab bar. Splitting is still available via the tab right-click context menu, drag-and-drop to a pane edge, and keyboard shortcuts.
+- Sessions awaiting your input now display a question-mark icon in the sidebar instead of a small dot, making the needs-input state easier to recognize at a glance.
+- The model-change notice in the conversation now displays the long-context window as a dot-separated suffix (e.g. "Claude Opus 4.8 · 1M") and renders the reasoning effort label with proper spacing, matching the model picker's style.
+
+### Fixed
+
+- Clicking an attachment label in the overflow menu no longer accidentally removes the attachment — removal now requires clicking the explicit X button.
+- Clicking an attachment row in the composer overflow menu now opens or previews the attachment, matching the behavior of clicking the visible attachment pill.
+- Column resizing in table views (such as manage sessions) now works reliably when dragging.
+- Fixed orphaned git fsmonitor daemon processes accumulating after each app quit. Daemons are now stopped on worktree removal and when the app exits.
+- Fixed the repository visibility selector (Public/Private) in the Create new repository and Publish to GitHub dialogs to use correct radio-group semantics, so screen readers now properly announce the selected option and its description.
+- Fixed the Windows tray icon disappearing against the taskbar when using a dark system theme. The tray icon now uses a theme-appropriate asset and updates automatically when the system theme changes.
+- Keyboard focus now moves correctly when adding or removing environment variable and header rows in the MCP server settings editor.
+- Screen readers now announce the keyboard shortcut when focusing the Search button in the sidebar (e.g. "Search, Command + K" on macOS, "Search, Ctrl + K" on Windows/Linux).
+- The "Feeling lucky" button in the theme picker now announces the number of new themes and the name of the theme it applied to screen readers, replacing an inaccurate theme count.
+
 ## v1.0.8
 
 ### Highlights

@@ -1,5 +1,38 @@
 # Changelog
 
+## v1.0.12
+
+### Highlights
+
+- Added an agent picker to the chat composer toolbar so you can select a custom agent before or during a session, including sessions opened from issues and pull requests.
+- HTML files can now be opened in the integrated browser directly from the editor header, file tree, and inline chat references.
+- Draft pull requests now open the full PR panel, giving access to agent-merge options and a "Ready for review" action.
+- When creating GitHub issues, the agent now follows the repository's issue templates, preserving headings, sections, and comments.
+- Fixed a bug where renaming a repository's default branch on the remote caused the diff view to show a large phantom diff of hundreds of files.
+
+### Added
+
+- Added an agent picker to the chat composer toolbar, letting you select a custom agent before or during a session. The selected agent is also applied to sessions spawned from issues, pull requests, and other entry points.
+- HTML files can now be opened in the integrated browser directly from the file editor header, the file tree context menu, and inline file references in chat messages. File browser tabs also now show the file name instead of a blank label when opening local files. Build-step apps (for example Vite or React projects) that reference ES modules or server-root assets can't render from a local file, so the browser panel now shows a short "run a dev server" explanation instead of a blank page. Global agent discovery now degrades gracefully on CLIs that do not implement `agents.discover`.
+- Right-clicking a chat image now shows a "Copy image" option that copies the image to your clipboard, available on both inline thumbnails and in the image viewer.
+
+### Changed
+
+- Draft pull requests now open the full PR panel, giving access to agent-merge options and a "Ready for review" action from the same place as other PR states.
+- Quote in reply now appends quoted text to the end of your existing draft, preserves inline code and formatting, supports a keyboard shortcut (Cmd+Shift+'), and places the cursor on the line after the quote.
+- The theme picker in Settings > Appearance is now fully keyboard and screen-reader accessible: arrow keys navigate between theme cards, Enter or Space applies a theme, Escape resets to the default GitHub theme, and selecting a theme announces its name to assistive technology.
+- When creating GitHub issues, the agent now checks for and follows the repository's issue templates, preserving headings, sections, and HTML comments.
+
+### Fixed
+
+- Fixed a bug where renaming a repository's default branch (e.g. master → main) on the remote would cause the diff view to show a large phantom diff of hundreds of files even though the working tree was clean.
+- Fixed keyboard focus loss on Windows after Alt+Tab — the chat composer now correctly regains focus when switching back to the app.
+- Fixed panel scrollbars being unclickable on Windows because resize handles were overlapping them.
+- In Project Settings, the "Open on GitHub" link for the config file is now hidden when the file has not yet been committed to the default branch. A "Reveal in file manager" button is shown instead so the file can still be found locally.
+- Navigating to a Settings section via the in-dialog search or contextual buttons now moves keyboard focus to that section's heading, so keyboard and screen-reader users land directly on the destination content instead of the dialog container.
+- On Windows, the tray now uses the main app icon so it keeps enough contrast in both light and dark taskbar modes.
+- Opening a Markdown file in the editor canvas no longer silently rewrites its contents (e.g. escaping underscores or changing fenced-code indentation) when an external no-op file refresh occurs.
+
 ## v1.0.11
 
 ### Highlights

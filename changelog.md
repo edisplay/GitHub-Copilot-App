@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.15
+
+### Fixed
+
+- Fixed the default branch reverting to the repository's default branch every time a project was reopened after being manually changed in Settings.
+
 ## v1.0.14
 
 ### Highlights

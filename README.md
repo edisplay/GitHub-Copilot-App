@@ -26,7 +26,7 @@ But we also know as developers, much our time has always been devoted to tasks t
 ### Prerequisites
 
 - [Git](https://github.com/git-guides/install-git)
-- An active paid [GitHub Copilot](https://github.com/features/copilot/plans) subscription, including Copilot Pro, Pro+, Max, Business, or Enterprise plans
+- A [GitHub Copilot](https://github.com/features/copilot/plans) plan — any plan works, including Copilot Free and [GitHub Copilot Student](https://github.com/education/students). No Copilot plan? You can still use the app by bringing your own key (BYOK) with your own model provider.
 
 ### Install
 

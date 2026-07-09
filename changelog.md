@@ -1,5 +1,43 @@
 # Changelog
 
+## v1.0.19
+
+### Highlights
+
+- Added a rich text editor for the plan in the workspace Plan tab while Copilot waits for approval.
+- Deep links that create a new session can now nest it under an existing session, so it appears as a child in the sidebar.
+- You can now close an issue as a duplicate and select the canonical issue it duplicates.
+- "Create nested session" now opens a dialog to describe the task, letting the parent session spawn the nested session(s) instead of starting from an empty draft.
+
+### Added
+
+- Added a rich text editor for the plan in the workspace Plan tab while Copilot waits for approval.
+- Deep links that create a new session can now nest it under an existing session using a parent parameter, so it appears as a child in the sidebar.
+- You can now close an issue as a duplicate and select the canonical issue it duplicates.
+
+### Changed
+
+- "Create nested session" now opens a dialog to describe the task, letting the parent session spawn the nested session(s) instead of starting from an empty draft.
+- Clarified the subtitles in the Editor's Picks and Browse by Category sections of the extensions view.
+- Issue numbers now appear inline next to the title in the sub-issue picker, and stay visible even when a row isn't highlighted.
+- Refreshed the styling of nested-session message rows in the chat timeline for a calmer, more consistent look.
+
+### Fixed
+
+- Automation-related actions in the conversation timeline now show clear labels like "Listed automations" and "Saved automation" instead of generic "workflow" wording.
+- Clicking a GitHub Actions check in the checks drawer now opens the Actions job page instead of an incorrect pull request checks link.
+- Corrected "Healthcheck" to "Health check" in dialog and error messages for better readability and screen reader pronunciation.
+- Fixed "New session" on project-scoped canvases in the Extensions Canvas tab so it starts the session directly instead of opening the generic canvas picker.
+- Fixed "View logs" in the PR checks menu sometimes doing nothing for failing checks; it now opens the check's logs on GitHub, or is hidden if no link is available. Re-running a workflow run that is older than a month now shows a clear, calmer message instead of a raw GitHub API error.
+- Fixed text selection in the file view so the line-range highlight no longer lingers across hovered rows and copy behaves correctly.
+- Fixed the browser preview's Reload button sometimes clearing the address bar and failing to reload the page.
+- Fixed the keyboard focus outline being clipped on the first and last rows of the workflow runs and skills lists.
+- Fixed the pull request Reviewers list sometimes appearing empty when reviewers had already submitted a review or when a team was requested for review.
+- Fixed the text caret not appearing when focusing an empty pull request or issue comment box
+- Made date-group labels in the Recent runs list navigable as headings for screen readers.
+- Terminal canvas commands no longer re-execute when a session is restored after restarting the app.
+- The "Create PR" button no longer disappears for up to a minute after committing changes in a cloud-hosted workspace.
+
 ## v1.0.18
 
 ### Highlights

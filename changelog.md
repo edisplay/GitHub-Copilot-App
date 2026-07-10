@@ -1,5 +1,41 @@
 # Changelog
 
+## v1.0.20
+
+### Highlights
+
+- Added a /security-review slash command to start a security review of the current diffs.
+- In local sessions, you can now edit a previous message to rewind the conversation and resend it as a new turn.
+- Nested sessions in the sidebar now show connected hierarchy lines between parent and child rows for easier scanning.
+- Simplified the loading state of the pull request checks panel to show a single animated header instead of duplicate loading indicators.
+
+### Added
+
+- Added a /security-review slash command to start a security review of the current diffs.
+- In local sessions, you can now edit a previous message to rewind the conversation from that point and resend it as a new turn.
+
+### Changed
+
+- Nested sessions in the sidebar now show connected hierarchy lines between parent and child rows, making it easier to scan deeper session relationships.
+- Simplified the loading state of the pull request checks panel to show a single animated header instead of a duplicate loading message and skeleton.
+
+### Fixed
+
+- Clicking the header of a session plan file in the diff view now opens the Plan tab instead of doing nothing.
+- Collapsed project rows in the sidebar keep their project icon for working, paused, or completed sessions, only replacing it when a session needs input, is interrupted, or has failed.
+- Collapsed repository groups in the sidebar now keep showing the repository icon when all sessions are completed or ready to merge, instead of looking like a single session.
+- Fixed a spurious "Model changed to..." message appearing in the transcript when resuming a session with an unchanged model.
+- Fixed agent merge getting stuck and not re-prompting after a required check finished running while another check was still failing.
+- Fixed empty draft sessions sometimes remaining after leaving the multi-session grid view
+- Fixed pull requests briefly jumping out of "Ready to merge" in the sidebar while a merge was in progress before landing in "Done".
+- Fixed repository labels in the sidebar fading too early; hover and keyboard actions now only reserve space when revealed
+- Fixed the auto-merge agent sending unnecessary follow-up replies triggered by its own previous comments on a pull request.
+- Fixed the line-selection hint in the file header overlapping the toolbar buttons on narrow panels
+- Fixed the project removal confirmation dialog remaining visible after deleting a project in Settings.
+- Fixed the pull request author sometimes appearing as their own reviewer in the Reviewers panel.
+- Improved screen reader support in the Health Check dialog: diagnostic rows now announce their labels and pass/warning/error status, and copy-path buttons have distinct, descriptive names.
+- The Create PR action no longer appears for a workspace after a pull request has already been created for it.
+
 ## v1.0.19
 
 ### Highlights

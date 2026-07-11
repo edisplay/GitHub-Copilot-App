@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.0.21
+
+### Highlights
+
+- Clarified that the "GitHub Enterprise" sign-in option is for GitHub Enterprise Cloud with data residency (*.ghe.com).
+- Fixed a workspace's pull request status incorrectly showing as merged after the agent opened a new pull request for it.
+- Fixed queuing a pull request for merge when it's waiting on a required review — auto-merge now enables automatically so it queues once requirements pass.
+
+### Changed
+
+- Clarified during sign-in and in account settings that the "GitHub Enterprise" option is for GitHub Enterprise Cloud with data residency (*.ghe.com).
+
+### Fixed
+
+- Fixed a workspace's pull request status incorrectly showing as merged after the agent opened a new pull request for that workspace.
+- Fixed queuing a pull request for merge when it is waiting on a required review — the app now enables auto-merge so it queues automatically once requirements pass, instead of failing to queue.
+
 ## v1.0.20
 
 ### Highlights

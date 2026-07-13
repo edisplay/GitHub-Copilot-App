@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.0.22
+
+### Highlights
+
+- Add to panel now shows a "Relevant from session" group so you can quickly open issues and pull requests recently mentioned in the conversation.
+- The full-screen pull request Changes view now displays each file in its own card with addition/deletion counts in the sidebar.
+- Saved memories now appear in the conversation timeline, showing the fact that was remembered.
+- The issue timeline now shows a reference card with status icon, title, and issue number for blocked/blocking relationships.
+
+### Added
+
+- Add to panel now shows a "Relevant from session" group with issues and pull requests recently mentioned in the conversation, so you can open them as panel tabs without hunting for the original link.
+
+### Changed
+
+- In the full-screen pull request Changes view, each file now appears in its own spaced, rounded card, and the files sidebar shows addition/deletion counts for each file.
+- Saved memories now appear in the conversation timeline, showing the fact that was remembered.
+- Settings search now finds specific controls within a section (not just whole sections) and reliably focuses the matching control when selected. Cmd+F while Settings is open now refocuses the settings search.
+- Show a feedback icon (instead of a bug icon) on the Share feedback button in the sidebar.
+- The issue timeline now shows a reference card (status icon, title, and issue number) when an issue is marked as blocked by, or blocking, another issue, instead of a bare action line.
+
+### Fixed
+
+- Fixed an issue where creating a session with an initial prompt could sometimes create an empty session with the prompt never delivered.
+- Fixed browser preview tabs continuing to play audio and use resources after being closed
+- Fixed crashes that could occur from unusual keyboard events and when resizing the right panel.
+- Fixed expanding a message panel in a conversation sometimes scrolling the whole window instead of just the conversation.
+- Fixed file drag-and-drop onto the composer, sidebar, and comments not working correctly when the app was zoomed in or out
+- Fixed the environment picker in the new session composer showing every codespace under every project, even ones for a different repository.
+- Fixed the run status tooltip in the automations runs table overlapping nearby content by showing it above the row instead of to the side.
+- Fixed the storage location in Settings > General displaying mixed path separators on Windows; it now shows native Windows-style separators.
+- Hidden HTML comments in markdown (e.g. in pull request descriptions and comments) are no longer shown as visible text, while comments inside code blocks are still displayed correctly.
+- Long session durations in the Insights panel now show as hours and minutes (e.g. "2h 0m") instead of large minute counts.
+- Sessions that are just resuming or loading history no longer show up under Working in the sidebar.
+
 ## v1.0.21
 
 ### Highlights

@@ -1,5 +1,44 @@
 # Changelog
 
+## v1.0.25
+
+### Highlights
+
+- Discounted model promotions are now highlighted on the Home screen and in the model picker.
+- Web search tool calls now show the search query inline in the conversation.
+- The Files tab filter now autofocuses and supports arrow keys and Enter to navigate and open matches.
+- Running automations now show a live indicator in Recent runs, and you can filter runs by Running status.
+
+### Added
+
+- Show discounted model promotions on the Home screen and highlight them in the model picker.
+
+### Changed
+
+- Added a subtle outline around label color dots so overlapping colors are easier to distinguish.
+- In the tool confirmation prompt, the custom feedback field now appears after all other options, matching the order used elsewhere.
+- Keep the worktree icon visible and shimmer the status label while a worktree-backed session is being created
+- The Files tab filter now autofocuses when opened and supports Arrow Up/Down to move between matches and Enter to open the highlighted file.
+- Web search tool calls in the conversation now show the search query inline.
+
+### Fixed
+
+- Automations that are still running now appear in Recent runs with a running indicator, and you can filter runs by Running status.
+- Enterprise Managed User accounts now see a direct link to open a new github/app issue instead of a broken in-app feedback form.
+- Fixed empty state descriptions in workspace panels wrapping awkwardly on wide panels.
+- Fixed find-in-conversation (⌘F) reporting "No results" for text that is visibly on screen but stored with markdown escape characters.
+- Fixed folder rows in the Files tab shifting horizontally right after the file tree finished loading.
+- Fixed issue and pull request detail views sometimes showing raw error page content instead of a clear message with a retry option when a request failed.
+- Fixed pressing the up arrow key in the message composer incorrectly recalling prompt history when the cursor was on a list item that wasn't the first line.
+- Fixed the keyboard focus ring being clipped on the first row of the Files tree.
+- Fixed the permission prompt's "Always allow" rows wrapping their label onto two lines, and made the "won't ask again" detail also appear on hover, not just keyboard focus.
+- Fixed the sidebar and right panel animation so text no longer reflows mid-slide when expanding or collapsing them.
+- Fixed workflow timeline hover previews rendering behind the prompt composer during an active run.
+- Grouped tool call summaries now shimmer while any tool call in the group is still running, instead of looking finished before the group actually completes.
+- Review drafts and comments now show the correct account that will submit the review, instead of always showing your default account.
+- Sidebar and review panel toggle icons now show active color feedback while pressed, matching other icon buttons.
+- Smoothly animate the sidebar and right panel when expanding or collapsing them, without the conversation scroll position jumping.
+
 ## v1.0.24
 
 ### Highlights

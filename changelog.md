@@ -1,5 +1,113 @@
 # Changelog
 
+## v1.1.0
+
+### Highlights
+
+- Session grid, side chats in the review panel, and automatic session renaming to the pull request title are now available to all users.
+- Added `has:` and `no:` search qualifiers to the My Work filter, letting you filter issues and pull requests by label, assignee, milestone, project, type, sub-issue, or parent issue.
+- Mathematical notation written in LaTeX now renders as formatted math in chat responses.
+- Added a "Share as gist" action to the session panel to quickly upload a session's debug logs as a secret gist.
+- Cloud automation dialogs now support additional trigger types and let you require the triggering actor to have write access to the repository.
+
+### Added
+
+- Added `has:` and `no:` search qualifiers to the My Work filter, letting you filter issues and pull requests by whether they have a label, assignee, milestone, project, type, sub-issue, or parent issue set.
+- Added a "Share as gist" action to the session panel to quickly upload a session's debug logs as a secret gist.
+- Added a low disk space warning banner in the sidebar to alert you when local sessions are likely to run out of disk space.
+- Added Catppuccin Macchiato and Catppuccin Mocha theme options, and renamed the existing Catppuccin theme to Catppuccin Frappé.
+- Agents can now edit a previously staged PR review comment instead of creating a duplicate when asked to revise wording in the pending review draft.
+- Cloud automation dialogs now support additional trigger types and let you toggle whether an automation requires the triggering actor to have write access to the repository.
+- Expanded tool call inputs like search patterns, shell commands, and arguments are now syntax highlighted for easier scanning.
+- Expanded tool call rows in the timeline now show a metadata footer with when they started, how long they took, and the output size. Expanded reasoning rows show when they started.
+- Mathematical notation written in LaTeX now renders as formatted math in chat responses.
+- Model promotions can now spotlight a newly available model with a "Featured" badge and custom message, in addition to discount promotions.
+- Session grid (view multiple sessions at once), side chats in the review panel, and automatic session renaming to the pull request title are now available to all users and can be turned off in Settings.
+- Show an estimate of local disk space that will be reclaimed when deleting sessions
+- The prompt composer toolbar now switches to compact icon-only buttons at narrow widths, so labels no longer clip or overflow in small windows or split panes.
+
+### Changed
+
+- Clicking a code pointer to a specific line range now highlights the referenced lines in the file viewer, and links using GitHub-style line anchors are now recognized.
+- Improved diff rendering performance and inline hunk expansion in the session Changes view and remote change panel, matching the pull request Files tab.
+- Improved scroll performance and accuracy in the pull request Files view when comment threads are expanded or collapsed. You can revert to the previous behavior in Settings.
+- Navigating back to a recently viewed pull request's changed files now shows the diff instantly instead of reloading it.
+- Refined the full-height right panel layout: tab icons now render at a crisper native size with more symmetric padding.
+- The commit banner in the workspace diff view now appears immediately when you select a commit, showing a loading placeholder for the addition/deletion counts until they're ready.
+
+### Fixed
+
+- Bulk-archiving old sessions from the sidebar now also archives old quick chats, and no longer archives pinned sessions.
+- Comment timestamps in the diff view are now properly announced by screen readers, with the exact date and time available on demand.
+- Computer Use permission prerequisites now show the correct helper app name to grant permissions to.
+- Dropping a file (such as an image) onto the sidebar no longer shows a confusing "Couldn't add this repository" error — only folder drops create new projects.
+- Files without extensions, such as Makefile, Dockerfile, or scripts starting with a shebang like #!/usr/bin/env python, now get proper syntax highlighting instead of showing as plain text.
+- Fixed a crash in the Excel canvas that could occur when reloading or replacing a workbook.
+- Fixed a duplicate browser tab appearing when switching away from and back to a session with a running dev server.
+- Fixed a permission prompt (such as one for enabling extension hooks) getting stuck after being answered, which could leave a session unresponsive.
+- Fixed a rare crash on Windows that could occur while processing window events, including during app shutdown.
+- Fixed a rare startup timing issue that could cause a new session to use a different model than your saved default.
+- Fixed a red "Retry commits" error flashing in the Changes tab while a session's workspace was still being set up.
+- Fixed a stray keyboard focus ring appearing on the commit navigation menu after a mouse click, and made the loading state consistent between the pull request and session commit toolbars.
+- Fixed a visible scroll jump when reopening a conversation that was scrolled to the bottom
+- Fixed an issue on macOS where memory usage could grow excessively while a chat response was streaming.
+- Fixed an issue where choosing "Create PR + agent merge" could silently fail to turn on agent merge for the pull request.
+- Fixed an issue where confirming "Edit and rewind" on an edited message could close the dialog without rewinding the conversation.
+- Fixed an issue where pressing Enter to confirm an in-progress IME composition (e.g. Japanese input) in the free-form answer box could submit a half-typed answer instead of finishing the composition.
+- Fixed an issue where reopening a session could unexpectedly trigger a permission prompt.
+- Fixed an issue where resuming a session could show a blank or partial transcript instead of its full history.
+- Fixed an issue where settings like sidebar folder colors, custom repo names, pinned/Quick-chat order, and sidebar collapsed state could reset and onboarding could reappear on launch.
+- Fixed an issue where the app could fail to open, showing a dock icon but never displaying a window.
+- Fixed autopilot sessions sometimes showing permission prompts instead of running without interruption.
+- Fixed copying an image from chat to the clipboard, which previously did nothing.
+- Fixed crashes when opening malformed links, using transcript selection menus, or opening microphone system settings from voice mode.
+- Fixed extension and skill row content being hidden behind the hover background in high-contrast mode.
+- Fixed keyboard focus landing in the wrong place when navigating to a Settings section via a deep link; focus now moves to the section heading.
+- Fixed missing syntax highlighting for C#, Java, Kotlin, PHP, and other languages in the file view.
+- Fixed pasting a screenshot or copied image into a pull request or issue comment, which was previously silently dropped.
+- Fixed quick chats moving to the top of the sidebar's Last updated order just from opening them, without any real activity.
+- Fixed resuming a session sometimes showing a duplicate permission prompt and taking longer when auto-approve was toggled.
+- Fixed saved theme and accessibility settings being reset to defaults on app launch
+- Fixed scrolling jank when viewing pull request review comments that contain a lot of code.
+- Fixed sessions started by an automation getting stuck with no review panel, panel toggle, or Run / Open in / Create PR buttons until the app was restarted.
+- Fixed sessions started from a merged pull request briefly showing a "Closed" status before correcting to "Merged".
+- Fixed sessions with remote control incorrectly being blocked as requiring a Copilot subscription, and clarified the error shown when remote control isn't available.
+- Fixed the "opened this issue/pull request" timestamp so it can be revealed by click as well as hover, and reads its full date correctly to screen readers
+- Fixed the "Uncommitted" scope control in the diff toolbar not responding to clicks when there were no other scopes to switch to, and updated its label to match the file count style used elsewhere in the toolbar.
+- Fixed the commits list and commit count showing empty or zero for a branch after its pull request was merged with a merge commit.
+- Fixed the conversation view occasionally stopping auto-scroll to the bottom while the agent was still responding.
+- Fixed the conversation view sometimes getting stuck partway up the transcript instead of staying pinned to the bottom while an agent's response was streaming.
+- Fixed the Create PR options menu expanding too wide.
+- Fixed the diff view briefly showing a misleading "Retry" button while a new session's workspace was still being set up.
+- Fixed the diff view losing your scroll position when toggling the file tree sidebar while viewing wrapped lines.
+- Fixed the diff view's scope control (Files/Commits/Uncommitted) to land on the correct view for sessions with only uncommitted changes, allow selecting an empty commits view, keep the scope menu reachable when there are no commits yet, and cleaned up spacing alignment in the toolbar.
+- Fixed the dock/taskbar badge count to accurately reflect unread sessions and blockers without duplicate or stale counts.
+- Fixed the expanded artifacts list growing beyond the viewport, which could push its close button off-screen; it now scrolls within a fixed height instead.
+- Fixed the keyboard focus ring on dropdown menus in Settings, which incorrectly appeared near-black instead of the standard blue.
+- Fixed the labels picker not showing labels past the first 100 on repositories with a large number of labels
+- Fixed the model selector spuriously reopening on its own after it re-enabled once a new workspace's session became ready.
+- Fixed the onboarding "setting up" screen not announcing its status to VoiceOver screen reader users.
+- Fixed the prompt composer so blank lines added with Shift+Enter stay visible instead of collapsing.
+- Fixed the side panel drifting out of place and the conversation losing its scroll position or reading spot when the app's zoom level was not 100%.
+- Fixed the workflow run status control so keyboard and screen reader users can reveal the exact run time
+- Fixed triple-click line selection in the canvas markdown source view so each source line is selected as its own block.
+- Fixed wrapped diff lines sometimes getting clipped after the diff refreshed from an edit.
+- Fixed your own commits showing initials instead of your avatar in the commit banner when committing with a verified email other than a GitHub noreply address.
+- Home and End (and Shift+Home/Shift+End) now move or select to the start/end of the current line in the composer, instead of behaving inconsistently.
+- MCP App consent prompts no longer interrupt sessions running in auto-approve-all (YOLO) mode — the app's tool and message capabilities are auto-approved without prompting, matching the extension-permission gate.
+- Opening a session in VS Code now always opens in a new window instead of reusing an existing one.
+- Option+Enter now inserts a newline in the prompt composer on macOS, matching Shift+Enter.
+- Pasted HTML in chat messages now appears as plain text instead of being rendered as markup or disappearing.
+- Pressing Enter to confirm an IME candidate (e.g. Chinese Pinyin) while answering an agent question no longer submits the unconverted text.
+- Removed a non-functional "Create from" action from the sidebar for projects containing multiple repositories.
+- Screen readers now announce the description text next to the Agent merge toggle.
+- Screen readers now announce the onboarding steps prompting you to install the Copilot CLI or enable Copilot features when they appear.
+- Sessions and forks created in a different project now stay nested under their parent session's project group in the sidebar, showing their own project name on hover.
+- The "Last updated" time on the issue artifact tab can now be selected with keyboard or mouse to reveal the exact date, and is properly labeled for screen readers.
+- The plan reset time in Settings > Account is now keyboard- and screen-reader-accessible, so activating it reveals the exact reset date.
+- The quota warning banner's reset countdown is now keyboard- and screen-reader-accessible, so you can reveal the exact reset date without a mouse.
+- Typing an exact issue or PR number after # in the composer now shows that number at the top of the suggestion list instead of below unrelated matches.
+
 ## v1.0.26
 
 ### Highlights

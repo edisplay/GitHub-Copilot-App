@@ -1,5 +1,45 @@
 # Changelog
 
+## v1.1.1
+
+### Highlights
+
+- Added a toggle in the Files tab to show or hide hidden files (like .env) normally excluded by .gitignore.
+- Large sessions now open much faster, with older messages loading in the background instead of freezing the app.
+- Pull requests with many comments and reviews now load faster in the conversation and diff views.
+- Press Shift+Tab in the message composer to cycle between Plan, Autopilot, and Interactive modes.
+- Fixed agent merge not actually merging pull requests after being enabled.
+
+### Added
+
+- Added a toggle in the Files tab to show or hide hidden files (like .env) that are normally excluded by .gitignore.
+
+### Changed
+
+- Auto now appears as a switch at the top of the model picker with its own summary, and older model versions are grouped into a Previous models section so current models are easier to find.
+- Large sessions now open much faster, with older messages loading in the background instead of freezing the app.
+- Press Shift+Tab in the message composer to cycle between Plan, Autopilot, and Interactive modes.
+- Pull requests with many comments and reviews now load faster in the conversation and diff views.
+
+### Fixed
+
+- Autopilot mode now stays selected after the agent finishes a task instead of automatically switching back to Interactive.
+- Business, Enterprise, and GHES sign-in no longer gets blocked because of the Copilot CLI policy; access is now based on whether your organization has the Copilot app enabled.
+- Comment and review thread timestamps can now be activated to reveal the exact date and time, with an accessible label that matches the visible relative time.
+- Fixed a crash that could occur when copying text with ⌘C.
+- Fixed a delay showing the added/removed line counts on the Changes tab when opening large pull requests.
+- Fixed agent merge not actually merging pull requests after being enabled, and made a previous merge opt-in carry over to new pull requests.
+- Fixed crashes when pasting text into the composer and when displaying reasoning text containing many inline code spans.
+- Fixed keyboard and screen reader focus landing on the Settings dialog instead of the opened panel's heading when opening Settings directly to a specific panel.
+- Fixed keyboard focus not returning to the usage gauge button after closing Settings opened from its "View plan & usage" link.
+- Fixed the "Create from" dialog briefly showing a "no results" message while a pasted pull request or issue URL was still loading.
+- Fixed the Created and Updated timestamps in the My Work table view so screen readers announce the visible relative time before the full date when opened.
+- Fixed the diff toolbar overflowing in narrow panels by collapsing the update branch action, uncommitted label, and commit navigation controls gracefully as space shrinks.
+- Fixed the keyboard focus indicator being invisible when tabbing to a collapsed comment in the Files changed view.
+- Fixed the updated-at timestamp on My Work board cards so it correctly announces the relative time and reveals the exact date when activated, instead of only announcing the exact date.
+- Page Up/Down, Home/End, and arrow keys now scroll the pull request and issue overview panes and the diff view.
+- Screen readers now announce relative time labels (like session reset countdowns and timestamps) with full words instead of spelling out abbreviations.
+
 ## v1.1.0
 
 ### Highlights

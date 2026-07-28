@@ -1,5 +1,43 @@
 # Changelog
 
+## v1.1.2
+
+### Highlights
+
+- GitHub Copilot now appears automatically as a read-only model provider in Model Providers settings when you have an active Copilot seat.
+- Cloud automation triggers with a query field now use the same smart search filter input as issue triggers, with qualifier autocomplete and hints.
+- The default model selection now matches what's actually available to your account instead of always defaulting to a fixed model.
+- The Impeccable design skill got a major upgrade, adding native iOS and Android design guidance and a new doctor command for diagnosing setup issues.
+- WSL remote environments now include GitHub pull request and issue workflow skills, plus more reliable remote session connections.
+
+### Added
+
+- GitHub Copilot now appears automatically as a read-only model provider in the Model Providers settings when you're signed in with an active Copilot seat.
+
+### Changed
+
+- Cloud automation triggers with a query field, like pull request opened/synchronized/merged, now use the same search filter input as issue triggers, with qualifier autocomplete, placeholders, and hint text.
+- The default model selection now matches what's actually available to your account instead of always defaulting to a fixed model.
+- Upgraded the Impeccable design skill to a new major version, adding native iOS and Android design guidance, a new doctor command for diagnosing setup issues, and refined design review workflows.
+- WSL remote environments now include GitHub pull request and issue workflow skills, along with reliability improvements to remote session connections.
+
+### Fixed
+
+- Copying a selection from a chat response now preserves rich formatting, including tables, when pasting into apps like Slack, Teams, or Word.
+- Custom agents defined only on a branch or worktree now appear correctly in the agent picker and /agent autocomplete for that session.
+- Fixed a layout shift when opening an issue or pull request in My Work, where the assignees, reviewers, and labels controls would pop in and shift the toolbar after loading.
+- Fixed a stuck "waiting for review" state on a session's plan when a parent session approved or rejected it.
+- Fixed an empty progress bar appearing under the app's Dock icon on macOS while an agent turn is running.
+- Fixed an issue where the app could fail to open (icon appeared but no window) or repeatedly show onboarding to already set up users.
+- Fixed Copy (⌘C/Ctrl+C) sometimes clearing the clipboard instead of copying the selected text.
+- Fixed janky window resizing when a chat session is open and scrolled into its history.
+- Fixed the sidebar sometimes opening collapsed on startup and saved inbox sections not persisting between restarts.
+- Fixed URLs typed in the composer getting broken by stray backslashes (e.g. before underscores) when sent or rendered.
+- The reasoning effort you pick for a session now sticks, instead of reverting to Medium when you resume the session or restart the app.
+- The selection popup in the chat transcript no longer flashes at the top-left corner when dismissed, and copying selected text now keeps it highlighted instead of clearing the selection.
+- Timestamp reveal buttons on relative times (e.g. "3h ago") now announce "show timestamp" to screen readers instead of the generic "more info".
+- Timestamps in the activity feed are now accessible disclosures that keep their visible relative time and reveal the exact date when activated.
+
 ## v1.1.1
 
 ### Highlights

@@ -1,5 +1,88 @@
 # Changelog
 
+## v1.1.7
+
+### Highlights
+
+- Ask a question in Side chat during a session to explore options without answering the original question yet.
+- My Work now automatically detects when a repository was renamed or transferred on GitHub and updates your local project to match.
+- Orchestrators can now create child sessions in a project's existing local checkout instead of always creating a new isolated worktree.
+- PR creation now finds pull request templates in more locations, including the repository root and docs folder, not just .github/.
+- Composer status pills (plan, background tasks, factories, loading widgets) no longer shimmer, keeping labels static while counts still update.
+
+### Added
+
+- Added an "Ask in Side chat" action to questions asked during a session, letting you explore the options in a Side chat without answering the original question yet.
+- My Work now automatically detects when a repository was renamed or transferred on GitHub and updates the local project to match, so a stale repo name heals without reopening the branch picker.
+- Orchestrators can now create child sessions that run in a project's existing local checkout instead of always creating a new isolated worktree.
+
+### Changed
+
+- Added visual separators to group related tabs in the Customize view for easier scanning.
+- PR creation now finds pull request templates in more locations, including the repository root and docs folder, not just .github/
+- Removed the shimmering animation on composer status pills (plan, background tasks, factories, and loading widgets) so labels stay static while counts and completion states still update.
+
+### Fixed
+
+- Copilot no longer navigates you to an archived chat that opens as a blank "New chat"; it now tells you the chat is archived and needs to be restored first.
+- Fixed "Merge when ready" and "Queue when ready" incorrectly appearing on pull requests in repositories where auto-merge is disabled, which caused merging to fail.
+- Fixed a bug where sending a message to an archived session could resume it outside its original project directory instead of prompting you to restore it first.
+- Fixed a crash that could occur when the agent opened the browser preview with a malformed URL containing quotation marks.
+- Fixed a crash when browsing a workspace containing recursive directory links, and stopped a spurious error from appearing after closing an Excel spreadsheet.
+- Fixed a restored chat staying stuck with an "Answer required" badge after being archived while waiting on a response.
+- Fixed adding private plugin marketplaces so you can sign in or switch GitHub accounts when authentication is needed, instead of the add hanging or failing with a generic error.
+- Fixed an error when accepting a repository's configuration file from a new session's trust prompt before the session had been created.
+- Fixed an issue where background updates to an open canvas document could steal keyboard focus away from the chat composer while typing.
+- Fixed an issue where switching to or adding an account whose organization disabled the Copilot app could bypass the access restriction; the app now correctly blocks access whenever any signed-in account is restricted.
+- Fixed an issue where the slash-command menu could briefly lose plugin commands right after a session started.
+- Fixed buttons with a keyboard shortcut tooltip (like New chat, Send, Stop, and tab controls) not announcing the shortcut to screen readers.
+- Fixed cloud task transcripts rendering the final answer above the tool calls that produced it instead of below them.
+- Fixed committing changes when a branch workspace's checkout is in a detached HEAD state.
+- Fixed completion summaries sometimes rendering as part of preceding tool activity instead of as their own row.
+- Fixed copies made with Ctrl+C on Windows not appearing in the Windows clipboard history (Win+V).
+- Fixed crashes that could occur when browsing very deeply nested directory trees or during onboarding on some browsers.
+- Fixed editing and saving an MCP server in Settings from silently resetting its tool allowlist and working directory.
+- Fixed Find (Cmd+F) not searching the pull request diff when opening a pull request's Changes tab from My Work without first clicking a file.
+- Fixed image attachment thumbnails collapsing to an unreadably small size in some chat messages.
+- Fixed keyboard focus in menus and pickers being nearly invisible by showing the standard accessible focus ring instead of a faint grey highlight.
+- Fixed keyboard navigation in the My Work inbox becoming slow and dropping keypresses after loading more rows.
+- Fixed Markdown previews (including Mermaid diagrams and read-only file previews) so their text can be selected and copied.
+- Fixed middle-click paste (PRIMARY selection) on Linux for text selected in the diff view
+- Fixed My Work briefly flashing a "Refreshing..." banner and shifting the layout during background data refreshes.
+- Fixed opening a document canvas for a missing file silently creating a blank file instead of showing a load error.
+- Fixed opening a plain folder that contains a single nested Git repository incorrectly using the nested repository as the project instead of the folder you selected.
+- Fixed plan review feedback being lost when switching to another chat before sending it.
+- Fixed pull requests disappearing from My Work when a background refresh moved them up the list.
+- Fixed pull requests merged via the merge queue incorrectly showing a "closed this" event in the activity feed.
+- Fixed reasoning effort and context window controls disappearing when the recommended model is shown instead of a previously selected one
+- Fixed renaming a branch to a nested path (e.g. "feature/foo/bar") collapsing it into a single dash-separated name, and updated the rename branch action to show the branch name actually used.
+- Fixed skills saved with a UTF-8 byte order mark not appearing in Automations or in workflow prompt autocomplete.
+- Fixed submitting feedback from the app failing for accounts without permission to add labels, both when submitting directly and when using the prefilled GitHub issue fallback.
+- Fixed the "What's new" card on Home getting stuck showing an old release after a failed refresh, instead of updating once the network recovered.
+- Fixed the command palette becoming slow to respond when typing a search with a large number of workspaces or sessions.
+- Fixed the Files pane not updating when the agent created, moved, or deleted files, so changes now show up without switching tabs.
+- Fixed the Files tab changing its label and icon to match the selected file instead of staying labeled "Files" with a consistent folder icon.
+- Fixed the focused view tab in My work scrolling out of view when reordering it with the keyboard.
+- Fixed the hover highlight on extension rows in Customize so it no longer obscures the icon, name, description, and actions in high-contrast mode.
+- Fixed the Markdown editor carrying over bold, italic, or code formatting when using the arrow keys to move out of a blockquote or code block
+- Fixed the Markdown editor's Raw mode rendering source lines with extra spacing between them
+- Fixed the merge button and merge drawer showing a generic "Merge blocked" state for pull requests that are behind their base branch, instead of offering the "Update branch" action.
+- Fixed the merged pull request icon disappearing from a session in the sidebar once the session was no longer actively working and its local checkout had been removed.
+- Fixed the message box to respect native spelling and text replacement preferences, so configured text replacements (like macOS shortcuts) now expand correctly.
+- Fixed the mode selector icon overlapping the model icon in the composer toolbar at narrow window widths.
+- Fixed the stop and cancel controls for background tasks and shells looking like checkboxes in some themes by using a filled stop icon.
+- Fixed the terminal's text-selection highlight (and scrollbar) becoming invisible when the terminal's light/dark tone is set differently from the app's.
+- Fixed the worktree branch picker not showing local branches created outside the shared clone, such as branches checked out in another editor or tool
+- Fixed web search being unavailable in app sessions.
+- Reopening a file tab now shows the file's latest content instead of a stale cached preview.
+- Restored the native right-click menu (e.g. Paste) when right-clicking inside text inputs and rich text editors.
+- Screen readers now announce the selected item count when selecting multiple items in My Work and Manage sessions
+- Show an error message with a retry option in the sidebar when the session list fails to load, instead of leaving it blank.
+- The pull request review panel no longer offers Approve or Request changes on your own pull requests, since GitHub doesn't allow authors to use those verdicts on their own work.
+- Triple-clicking a line in the diff view now selects the whole line instead of a single word.
+- Unsent prompts on the Home screen are no longer lost when the app restarts.
+- Updated the search placeholder in Customize's All tab to indicate it searches MCP servers.
+
 ## v1.1.6
 
 ### Highlights

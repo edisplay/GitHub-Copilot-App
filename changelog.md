@@ -1,5 +1,156 @@
 # Changelog
 
+## v1.1.11
+
+### Highlights
+
+- Added a branch update strategy setting in project settings, letting you choose whether session branches are updated by merge commit or rebase.
+- Added a Session cleanup section to Sessions settings, letting you enable automatic archiving of inactive sessions and permanent deletion of archived sessions on separate schedules.
+- You can now select a range of commits in the Changes commit picker to view their combined diff.
+- When switching to Autopilot mode with tool permissions set to Always ask, Copilot now recommends a permission mode that lets it keep working unattended, with a one-click option to apply it.
+- The sidebar now has a configuration menu for grouping and ordering sessions, filtering by status/PR/environment/source, collapsing all groups, and marking all as read.
+
+### Added
+
+- Added a "Plan" option to the right panel's "+" menu in chat sessions, so you can open the plan tab from there instead of only from the plan pill above the composer.
+- Added a branch update strategy setting in project settings, letting you choose whether session branches are updated by merge commit or rebase.
+- Added a Session cleanup section to Sessions settings, letting you enable automatic archiving of inactive sessions and permanent deletion of archived sessions on separate schedules.
+- Outdated pull request comments that aren't tied to a file are now collapsible on their own and collapse together with the "Collapse all files" action.
+- Overflowing code blocks now support keyboard scrolling (Tab in, then use arrow keys, Home, End, Page Up/Down), and macOS shows a draggable scrollbar on hover for mouse users.
+- Right-click a recent automation run to stop it or open its session, without opening the run details first.
+- Starting a new session from an issue now prefills a fix command and keeps the linked issue visible while the workspace is created.
+- The command palette now includes quick actions for managing sessions, keyboard shortcuts, accounts, health check, help center, and app updates.
+- When switching to Autopilot mode with tool permissions set to Always ask, Copilot now recommends a permission mode that lets it keep working unattended, with a one-click option to apply it.
+- You can now enable Canvas Dev Mode from the command palette on extension canvases to switch to a read-only developer view and refresh the canvas.
+- You can now select a range of commits in the Changes commit picker to view their combined diff, instead of only one commit at a time.
+- You can now Shift-click checkboxes in Manage sessions to select or deselect a range of sessions at once.
+
+### Changed
+
+- Autopilot mode in the prompt composer now uses a rocket icon instead of the robot icon, making it easier to distinguish from the agent picker.
+- Clarified the description of the Assisted tool approval mode to explain that requests are automatically approved only after passing an LLM safety check.
+- Clarified the warning message shown for unsupported media previews in the files view.
+- Exported session gists now include the full conversation detail—reasoning, tool activity, and timing—matching what you see in the app.
+- Linked and unlinked issues and pull requests now show consistent icons and reference cards in the issue timeline.
+- Reduced padding on user chat message bubbles for a more compact conversation view.
+- Refined home page suggestion cards with simpler icons and responsive layouts.
+- Removed Draft from the sidebar's Status filter (draft pull requests remain available under the PR filter), and merge-ready pull requests no longer count toward sessions needing attention.
+- Removed the redundant branch label from the completed pull request widget, showing only the title, draft badge, and diff stats.
+- Renamed the side panel toggle, resize, and width controls to use panel-neutral wording instead of "review panel".
+- Shortened chat and session context menu actions to Pin, Archive, and Delete, and grouped copy actions into a new Copy submenu with Branch and Pull request. My Work tabs now stay highlighted while their context menu is open.
+- Shortened the placeholder text shown in the message box across chat, plan, and autopilot modes.
+- The "Ask in Side chat" action on question prompts now stays visible instead of only appearing on hover.
+- The pull request view now shows every status check instead of stopping at the first 100.
+- The sidebar now has a configuration menu for grouping and ordering sessions, filtering by status/PR/environment/source, collapsing all groups, and marking all as read.
+- The Stop/Stop all button in the workspace header is now icon-only for a more compact toolbar.
+- Tightened spacing in menus, context menus, and selection popovers for a more compact feel.
+- Updated Manage sessions menus to match My Work's sizing and density, removed the redundant heading, shortened Archive and Delete labels, and improved ellipsis-button menu placement and visibility.
+- Updated the queued message label to use sentence case.
+- Widened workspace tabs so labels and close controls have more breathing room.
+
+### Fixed
+
+- Expanding the sidebar no longer briefly freezes the app, and opening feedback from a collapsed sidebar now reliably opens the feedback dialog instead of doing nothing.
+- Files tabs now show the selected file's name and file-type icon again instead of a static "Files" label.
+- Find in a diff now searches text revealed by expanding a collapsed section or the full file, instead of reporting no results for content that's visible on screen.
+- Fixed a brief input lag when switching between mouse and keyboard while typing.
+- Fixed a bug on Windows where archiving a session could fail permanently, leaving it stuck and unable to be archived.
+- Fixed a closed session's tab strip sometimes appearing at the bottom of the conversation panel.
+- Fixed a crash on Windows that could occur when the app's tray menu was rebuilt while it was being closed.
+- Fixed a duplicate divider appearing in the Run options menu.
+- Fixed a duplicate tooltip appearing on the Update branch action in the diff toolbar when its label was already visible.
+- Fixed a misleading error when an extension's MCP server was blocked by an organization policy; the app now explains that the server is disallowed by policy and directs you to your administrator.
+- Fixed a phantom media player entry appearing in the system media controls on Linux while playing videos in the app
+- Fixed Agent Merge getting stuck and not resuming when a pull request's mergeability status was temporarily unknown, such as right after a conflicting base update.
+- Fixed an issue on Linux where a leftover copy of the app's bundle could interfere with git operations, causing fetch failures and blocking session creation.
+- Fixed an issue on Windows where the app update could fail because the installer started before the previous app process had fully exited.
+- Fixed an issue where an in-progress diff comment could be silently lost when selecting text on a diff or switching to comment on a different line.
+- Fixed an issue where archiving a workspace could fail if the workspace folder was only partially removed.
+- Fixed archived sessions sometimes briefly reappearing in the session list while cleanup was still in progress.
+- Fixed archiving a workspace sometimes failing on Windows when a file in the workspace was briefly locked by another process.
+- Fixed archiving or deleting a workspace sometimes failing with a git error when its files had already been partially cleaned up.
+- Fixed automation run pills and generated cards so plans, background tasks, widgets, factories, and GitHub references open in the run sidebar without losing pending plan approvals.
+- Fixed avatar fallback initials being announced by screen readers as part of surrounding labels, such as repository filter options.
+- Fixed background agent task labels not showing which model was used when no specific model was requested.
+- Fixed C4 diagrams (C4Context, C4Container, C4Dynamic) failing to render with a "Failed to load rendered diagram" error.
+- Fixed chat progress indicators freezing after collapsing and reopening a sidebar repository group.
+- Fixed clearing an automation's project in the automation editor not actually removing it, and added an error message when saving an automation fails.
+- Fixed collapsed sidebar sections re-expanding and losing their collapsed state when they contained the active session.
+- Fixed connecting a GitHub repository by URL when signed in with multiple accounts on the same GitHub host — it now resolves the account that actually has access instead of failing or opening the wrong project.
+- Fixed corrupted terminal glyphs that could appear after switching away from a terminal tab and back.
+- Fixed crashes that could occur when browsing very deep folder trees in the directory picker, when opening malformed external links, and when using code block controls in the composer.
+- Fixed deleted sessions reappearing after restarting the app.
+- Fixed empty sessions appearing on the Agents page after launching the app with remote access disabled.
+- Fixed extra spacing above the first line and mismatched gutter background color when editing a code file.
+- Fixed generated files in the Changes view snapping back to collapsed after you expanded them, whenever the diff was recomputed.
+- Fixed globally installed plugin canvases showing up as duplicate entries once per project in the Canvases and Installed tabs.
+- Fixed Go To File returning no results when typing a file path with backslash separators.
+- Fixed hard-wrapped list items in the Markdown editor showing broken-looking line breaks instead of flowing together as one item.
+- Fixed Home not allowing session submission for remote-only projects, such as Codespaces, that have no local checkout.
+- Fixed hover-revealed row controls (selection checkboxes and overflow menus) in Manage sessions and My work so they're no longer invisibly clickable on touch devices, and are now visible at rest for touch input.
+- Fixed keyboard focus being lost after closing a tab in the right panel
+- Fixed keyboard focus jumping out of the MCP servers list in Settings after canceling or confirming a server removal; focus now stays on a sensible control in the list.
+- Fixed keyboard navigation getting stuck when tabbing through action buttons on sidebar chat and repository rows
+- Fixed MCP servers that require sign-in getting stuck on a loading spinner instead of showing a sign-in prompt.
+- Fixed misaligned action rows (like Clone repository and Open folder) in the project picker dropdown
+- Fixed misaligned labels and fields for the custom CRON expression in the automation dialog.
+- Fixed Mona being clipped or hidden behind the composer on the new session page as it grows.
+- Fixed My work inbox items not showing when the window is narrower than about 965px by switching to a single-pane layout instead of clipping the detail view.
+- Fixed notification sounds sometimes not playing over Bluetooth speakers on Linux
+- Fixed Pick & Polish screenshot region capture by selecting from a static browser preview without including the picker highlight or guidance in the captured image.
+- Fixed Quick Open's "Keyboard shortcuts" entry, and the toggle thinking/file edits entries, advertising the wrong or a stale default key after a shortcut was remapped or cleared.
+- Fixed relaunching the app on Windows sometimes leaving it hidden and unresponsive instead of restoring and focusing the existing window.
+- Fixed repository search and Add GitHub Repository incorrectly matching a repository to the wrong signed-in account when multiple accounts had access to a repository with the same name.
+- Fixed scheduled automations continuing to run and fail after their chat session was archived.
+- Fixed screen readers announcing the selected repository instead of the search field when opening the My Work repository filter.
+- Fixed screen readers not announcing which repositories are selected in the repository filter on the My work view.
+- Fixed screen readers not reading the helper text next to toggles and fields in Settings > Projects, giving each script's Edit/Remove buttons a distinct name, and fixed the branch prefix validation error not being announced while the dialog was open.
+- Fixed session titles overlapping the macOS window controls in the session grid view.
+- Fixed sessions created automatically from a GitHub issue losing the selected context window size.
+- Fixed skipped checks incorrectly showing as failed in the pull request checks panel
+- Fixed slash commands completed with Tab in the Automation editor not being saved correctly.
+- Fixed terminals sometimes getting stuck using slower rendering instead of GPU-accelerated rendering.
+- Fixed the "Delete sessions without confirmation" setting also silencing the archive confirmation dialog. Archiving now has its own "Archive sessions without confirmation" setting.
+- Fixed the "Find in workspace" position menu in Settings truncating longer option labels.
+- Fixed the `/pr-fix-checks` and `/pr-resolve-comments` slash commands incorrectly reporting no failing checks or unresolved comments while a pull request's checks or comments were still loading.
+- Fixed the app hanging for about 10 seconds on startup when launched from a terminal.
+- Fixed the Changes view losing its file list after a pull request's session was merged.
+- Fixed the commits menu in the Changes view losing its scroll position and selected row when selecting the first commit of a range.
+- Fixed the Continue button staying disabled after typing feedback on a plan review, so it can be clicked to submit.
+- Fixed the file-mention picker and Go-to-File suggesting ".git" as a file to reference
+- Fixed the Files tab flickering and briefly hiding expanded folders while it refreshed in the background.
+- Fixed the Files, Changes, and Commits tabs for workspaces created from a project containing multiple Git repositories, which previously failed to load or showed incorrect data.
+- Fixed the final completion summary sometimes disappearing behind the collapsed activity when using Minimal verbosity.
+- Fixed the loading timer resetting to 0s when starting a new session without a project selected.
+- Fixed the Markdown canvas becoming read-only when it contained a Mermaid diagram; text before and after the diagram now stays editable.
+- Fixed the model promotion banner's dismiss button text overflowing and getting clipped on narrow windows.
+- Fixed the panel toggle keyboard shortcut not working in standalone chat sessions.
+- Fixed the Run control not showing a newly added run script until the workspace was refreshed.
+- Fixed the Settings dialog staying open when pressing Escape on the MCP "Add custom server" form while keyboard shortcuts were disabled in Settings > Accessibility.
+- Fixed the side chat panel not opening when adding selected text to a side chat from a general chat.
+- Fixed the side-panel resize splitter highlight and tooltips being hidden behind native browser previews and extension canvases.
+- Fixed the sidebar layout pushing content off-screen on Linux when using GNOME's Large Text setting or certain tiling window managers.
+- Fixed the stop/cancel button on background task and shell rows sometimes being covered by overflowing task text.
+- Fixed the toolbar in the inline message editor so its buttons respond where they appear instead of being offset.
+- Fixed the workspace popover showing the wrong Session ID; it now shows the actual Copilot CLI session ID and stays hidden until a session exists.
+- Fixed typing or pasting in a session grid cell sometimes landing in a different cell's composer instead of the one you clicked.
+- Fixed window resizing feeling janky by removing an unnecessary full-window restyle on each resize.
+- Improved screen reader support for plan review, question, and input request prompts, and fixed the selected option losing its highlight when focus moved away.
+- Improved screen reader support in the My Work list: rows now announce repo, author, updated time, labels, checks, changes, comments, and assignee names, and row checkboxes have clear, consistent labels.
+- Links to specific issue or pull request comments now open in-app and scroll to the referenced comment instead of just opening the parent issue or pull request.
+- Local repository projects now detect missing, changed, or unreadable origin remotes before session creation. Safe origin mismatches can be restored automatically, while other problems include repair or re-add guidance.
+- Project MCP servers settings now show a distinct message when a config file exists but loaded no servers, instead of the same empty state as having no config file at all.
+- Quota usage percentages no longer round up, so displayed usage matches the actual remaining quota.
+- Removed the duplicate "Remove app" menu row for custom apps in the "Open in" menu, keeping a single inline remove action that remains keyboard accessible.
+- Renaming a branch now preserves letter case in the name you type, so case-sensitive ticket references like TICKET-123 are no longer lowercased.
+- Screen readers now announce only the model name when opening the model information dialog in the model picker.
+- The origin recovery notification for a failed session now updates to match the current problem and offers the right fix instead of showing stale guidance after you retry.
+- The plugin details dialog now lists the MCP servers a plugin provides alongside its skills, so it's clear what installing or uninstalling the plugin adds or removes.
+- Use the pull request icon for the Copy > Pull request action in the session menu.
+- Videos now play inline in the Files tab instead of showing a "can't be previewed" message.
+- Voice dictation now shows a clear error and a way to retry or open settings when the speech-to-text model list fails to load, instead of silently doing nothing when you click the mic button.
+- When starting a session fails because a repository's remote origin is missing, mismatched, or can't be verified, your prompt, attachments, and settings are now preserved with a notification offering to fix the origin or retry, instead of losing your work.
+
 ## v1.1.10
 
 ### Highlights

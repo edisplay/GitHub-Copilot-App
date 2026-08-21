@@ -1,5 +1,54 @@
 # Changelog
 
+## v1.1.12
+
+### Highlights
+
+- You can now use /ask and /btw to ask a side question without interrupting the current response.
+- The pull request Files view now lets you expand the diff to see more surrounding code, matching the controls already available in Compare changes.
+- Fixed a security issue where tool approval prompts requested by a hook could be skipped instead of always requiring your explicit approval.
+- Active agent sessions now pick up the latest pull request state, like a merge or ready-for-review change, instead of reasoning from stale information.
+
+### Added
+
+- Added a Copy > Session ID action to session context menus in the sidebar.
+- The pull request Files view now lets you expand the diff to see more surrounding code, matching the expand up/down/whole file controls already available in Compare changes.
+- You can now use /ask and /btw to ask a side question without interrupting the current response.
+
+### Changed
+
+- Moved Search into the sidebar header next to Back and Forward, and moved Open in from the workspace header into the Files and Changes toolbars.
+- Refined the command palette's selection styling with a more compact row height and a full-width highlight showing a Return icon for the active item.
+- Sidebar archive actions now distinguish merged and closed pull requests, and merged pull requests are included for archiving even after their worktree is cleaned up.
+- Widened the plan view so plan content is easier to read.
+
+### Fixed
+
+- Active agent sessions now pick up the latest pull request state (like a merge or ready-for-review change) instead of continuing to reason from stale information.
+- Assistant responses using LaTeX delimiters like \( ... \) and \[ ... \] now render as math instead of showing raw brackets and commands.
+- File tab close buttons in chat are now always visible and easier to reach with touch or keyboard, instead of only appearing on hover.
+- Fixed a security issue where tool approval prompts requested by a hook could be skipped instead of always requiring an explicit approval from you.
+- Fixed a skill load failure incorrectly showing "Loaded skill" instead of "Failed to load skill".
+- Fixed Agent Merge sometimes taking much longer than expected to re-check a pull request after your computer wakes from sleep.
+- Fixed Ctrl/Cmd+T not opening the Add to panel picker for a workspace whose right panel had never been opened.
+- Fixed dragging and dropping files onto the app on Linux, which previously did nothing.
+- Fixed keyboard focus and screen reader announcements when confirming account removal in Settings > Accounts.
+- Fixed pull request checks incorrectly showing as failed to load when some check details were restricted by organization security settings.
+- Fixed repositories disappearing from the onboarding "Connect your repositories" step after navigating back from a later step.
+- Fixed rows in the command palette shifting position when highlighted while arrowing through results.
+- Fixed screen readers announcing a generic label instead of the actual question when navigating confirmation prompts (permissions, rate limits, browser sharing, repository setup, and similar dialogs).
+- Fixed several terminal commands that could silently write files or change system settings without asking for approval; these now require confirmation like other non-read-only commands.
+- Fixed the "Started" and "Last read" timestamps in the shell task detail panel so they can be revealed with the keyboard and are announced correctly by screen readers.
+- Fixed the Add MCP Server form's error message to mention that server names can't contain a closing brace (}).
+- Fixed the Changes panel showing raw Git error output when a workspace's checkout was missing or invalid; it now shows a clear, actionable error message with retry and details options.
+- Fixed the Files tab becoming slow and unresponsive when filtering large repositories.
+- Fixed the model picker trigger being announced as a combobox by screen readers instead of a button.
+- Fixed the model picker's "Retry loading models" button so it actually retries instead of doing nothing when models failed to load.
+- Non-openable file and MCP references in chat can now be revealed and read with the keyboard and screen readers, not just by hovering.
+- The Updated, Created, and Location details in the Manage sessions table can now be revealed and read by keyboard and screen reader users, not just with a mouse hover.
+- When a cloud session can't be created because cloud sandboxes aren't enabled for your organization or enterprise, you now see a clear explanation with the option to view detailed logs, instead of a generic failure or being sent to the Health check.
+- Workflow run rows now announce the full date and time to screen readers, instead of only showing it in a hover tooltip.
+
 ## v1.1.11
 
 ### Highlights

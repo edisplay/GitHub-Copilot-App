@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.19
+
+### Fixed
+
+- Fixed the plan and files views getting stuck or failing to load after a session was idle for a while.
+- Restored the "+" Add tab button in empty workspace and chat side panels.
+
 ## v1.1.18
 
 ### Highlights
